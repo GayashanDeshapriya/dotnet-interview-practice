@@ -5,7 +5,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 ---
 
 ## 📚 Table of Contents
-1. [Remove duplicates from an array](#1-remove-duplicates-from-an-array)
+1. [Write a C# program to remove duplicate characters from a string.](#1-remove duplicate characters from a string.)
 2. [Reverse a string](#2-reverse-a-string)
 3. [Check palindrome](#3-check-palindrome)
 4. [Count vowels in a string](#4-count-vowels-in-a-string)
