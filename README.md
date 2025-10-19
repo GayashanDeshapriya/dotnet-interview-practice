@@ -7,7 +7,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 ## 📚 Table of Contents
 1. [Write a C# program to remove duplicate characters from a string](#1-remove-duplicate-characters-from-a-string)
 2. [Reverse a string](#2-reverse-a-string)
-3. [Check palindrome](#3-check-palindrome)
+3. [Check if a string is a palindrome.](#3-check-palindrome)
 4. [Count vowels in a string](#4-count-vowels-in-a-string)
 5. [Find largest number in an array](#5-find-largest-number-in-an-array)
 6. [Find second highest number](#6-find-second-highest-number)
@@ -66,7 +66,7 @@ namespace InterviewPractice
 ```
 ### 2. reverse-a-string
 **Answer:**  
-Use a HashSet  
+Use a Array
 ```csharp
 namespace InterviewPractice
 {
@@ -87,6 +87,42 @@ namespace InterviewPractice
                 string output = Reverse(input);
                 Console.WriteLine("Reverse Versin is: " + output);
             }
+        }
+    }
+}
+```
+
+### 3. check-palindrome
+**Answer:**  
+```csharp
+namespace InterviewPractice
+{
+    class Program
+    {
+        static bool Ispalidrome(string s)
+        {
+            int i = 0, j = s.Length - 1;
+            while (i < j)
+            {
+                if (s[i++] != s[j--])
+                {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Word:");
+            String? input = Console.ReadLine();
+            if (input != null)
+            {
+                bool value = Ispalidrome(input);
+                Console.WriteLine(value);
+            }
+
         }
     }
 }
