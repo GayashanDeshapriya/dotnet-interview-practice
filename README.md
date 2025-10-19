@@ -30,7 +30,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 
 ### 1. remove-duplicate-characters-from-a-string
 **Answer:**  
-Use a HashSet or LINQ `Distinct()`  
+Use a HashSet  
 ```csharp
 namespace InterviewPractice
 {
@@ -63,4 +63,32 @@ namespace InterviewPractice
         }
     }
 }
+```
+### 2. reverse-a-string
+**Answer:**  
+Use a HashSet  
+```csharp
+namespace InterviewPractice
+{
+    class Program
+    {
+        static string Reverse(string s)
+        {
+            char[] arr = s.ToCharArray();
+            Array.Reverse(arr);
+            return new string(arr);
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your word");
+            string? input = Console.ReadLine();
+            if (input != null)
+            {
+                string output = Reverse(input);
+                Console.WriteLine("Reverse Versin is: " + output);
+            }
+        }
+    }
+}
+```
 
