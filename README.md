@@ -28,8 +28,39 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 
 ---
 
-### 1. Remove duplicates from an array
+### 1. remove-duplicate-characters-from-a-string
 **Answer:**  
 Use a HashSet or LINQ `Distinct()`  
 ```csharp
-var result = arr.Distinct().ToArray();
+namespace InterviewPractice
+{
+    class Program
+    {
+        static string removeDuplicates(string s)
+        {
+            var seen = new HashSet<char>();
+            var result = new System.Text.StringBuilder();
+
+            foreach (var c in s)
+            {
+                if (!seen.Contains(c))
+                {
+                    seen.Add(c);
+                    result.Append(c);
+                }
+            }
+            return result.ToString();
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your word here:");
+            string? input = Console.ReadLine();
+            if (input != null)
+            {
+                string output = removeDuplicates(input);
+                Console.WriteLine("Output without duplicates: " + output);
+            }
+        }
+    }
+}
+
