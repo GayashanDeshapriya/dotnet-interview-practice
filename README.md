@@ -9,6 +9,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 2. [Reverse a string](#2-reverse-a-string)
 3. [Check if a string is a palindrome.](#3-check-palindrome)
 4. [Find first non-repeated character in a string](#4-Findfirst-non-repeated-character-in-a-string)
+5. [Remove duplicates from an integer array](#5-Remove-duplicates-from-an-integer-array)
 
 ---
 
@@ -75,7 +76,6 @@ namespace InterviewPractice
     }
 }
 ```
-
 ### 3. check-palindrome
 **Answer:**  
 ```csharp
@@ -111,7 +111,6 @@ namespace InterviewPractice
     }
 }
 ```
-
 ### 4. Findfirst-non-repeated-character-in-a-string
 **Answer:**  
 ```csharp
@@ -158,4 +157,27 @@ namespace InterviewPractice
     }
 }
 ```
+### 5. Remove-duplicates-from-an-integer-array
+**Answer:**  
+```csharp
+namespace InterviewPractice
+{
+    class Program
+    {
+        static int[] RemoveDuplicate(int[] arr)
+        {
+            return arr.Distinct().ToArray();
+        }
 
+        static void Main(string[] args)
+        {
+            int[] array = { 1, 2, 3, 3, 4 };
+            int[] newarr = RemoveDuplicate(array);
+            for (int i = 0; i < newarr.Length; i++)
+            {
+                Console.WriteLine(newarr[i]);
+            }
+        }
+    }
+}
+```
