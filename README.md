@@ -10,6 +10,8 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 3. [Check if a string is a palindrome.](#3-check-palindrome)
 4. [Find first non-repeated character in a string](#4-Findfirst-non-repeated-character-in-a-string)
 5. [Remove duplicates from an integer array](#5-Remove-duplicates-from-an-integer-array)
+6. [Find Common Elements Between Two Arrays](#6-Find-Common-Elements-Between-Two-Arrays)
+
 
 ---
 
@@ -177,6 +179,56 @@ namespace InterviewPractice
             {
                 Console.WriteLine(newarr[i]);
             }
+        }
+    }
+}
+```
+### 6. Find-Common-Elements-Between-Two-Arrays
+**Answer:**  
+```csharp
+namespace InterviewPractice
+{
+    class Program
+    {
+        //common way
+        public static void FindCommonElements(int[] arr1, int[] arr2)
+        {
+            List<int> common = new List<int>();
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr2.Length; j++)
+                {
+                    if (arr1[i] == arr2[j])
+                    {
+                        if (!common.Contains(arr1[i]))
+                        {
+                            common.Add(arr1[i]);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("Common elements: " + string.Join(", ", common));
+        }
+
+        //Using Dictionary or hashset
+        public static void FindCommonElementsOptimized(int[] arr1, int[] arr2)
+        {
+            HashSet<int> set = new HashSet<int>(arr1);
+            List<int> common = new List<int>();
+
+            foreach (int i in arr2)
+            {
+                if (set.Contains(i)) common.Add(i);
+            }
+            Console.WriteLine("Common elements: " + string.Join(", ", common));
+        }
+
+        static void Main(string[] args)
+        {
+            int[] array1 = { 1, 2, 3, 4 };
+            int[] array2 = { 2, 3, 4 };
+            FindCommonElements(array1, array2);
+            FindCommonElementsOptimized(array1, array2);
         }
     }
 }
