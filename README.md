@@ -315,6 +315,7 @@ public static class Program
         string input = "Hellosrilanka";
 
         FindDuplicates(input);
+        FindDuplicatesWithHashset(input);
 
 
     }
@@ -345,6 +346,26 @@ public static class Program
             }
         }
     }
+
+public static void FindDuplicatesWithHashset(string input)
+{
+    {
+        HashSet<char> seen = new HashSet<char>();
+        HashSet<char> duplicates =new HashSet<char>();
+
+        foreach(char c in input )
+        {
+            if (!seen.Add(c))
+            {
+                duplicates.Add(c);
+            }
+        }
+        foreach (char c in duplicates)
+        {
+            Console.WriteLine(c);
+        }
+    }
+}
     
 }
 ```
