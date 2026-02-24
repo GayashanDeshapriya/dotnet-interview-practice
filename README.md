@@ -1,4 +1,4 @@
-# 🧠 .NET Practical Interview Questions & Answers
+# 🧠Practical Interview Questions & Answers
 
 A curated list of **.NET and C# practical interview questions** to help you prepare for technical interviews — from array manipulations to OOP concepts and LINQ tricks.
 
