@@ -272,7 +272,7 @@ namespace InterviewPractice
     }
 }
 ```
-### 6. Find-Find Second Largest Number in array
+### 7. Find-Find Second Largest Number in array
 **Answer:**  
 ```csharp
 public static void Main()
