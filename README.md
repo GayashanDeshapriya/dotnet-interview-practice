@@ -78,6 +78,37 @@ namespace InterviewPractice
     }
 }
 ```
+
+use pointers
+```csharp
+public static class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine(ReverseString("Animal"));
+    }
+
+    public static string ReverseString(string input)
+    {
+        char[] chars = input.ToCharArray();
+        int left = 0;
+        int right = input.Length - 1;
+
+        while (left < right)
+        {
+            char temp = chars[left];
+            chars[left] = chars[right];
+            chars[right] = temp;
+
+            left ++;
+            right--;
+
+        }
+        return new string(chars);
+
+    }
+}
+```
 ### 3. check-palindrome
 **Answer:**  
 ```csharp
