@@ -19,35 +19,43 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 **Answer:**  
 Use a HashSet  
 ```csharp
-namespace InterviewPractice
+public static void Main()
 {
-    class Program
-    {
-        static string removeDuplicates(string s)
-        {
-            var seen = new HashSet<char>();
-            var result = new System.Text.StringBuilder();
+    int[] array = { 1, 2, 3, 4, 4, 5, 5, 6 };
 
-            foreach (var c in s)
-            {
-                if (!seen.Contains(c))
-                {
-                    seen.Add(c);
-                    result.Append(c);
-                }
-            }
-            return result.ToString();
-        }
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter your word here:");
-            string? input = Console.ReadLine();
-            if (input != null)
-            {
-                string output = removeDuplicates(input);
-                Console.WriteLine("Output without duplicates: " + output);
-            }
-        }
+    Console.WriteLine("Using LINQ:");
+    int[] result1 = RemoveDuplicatesWithLinq(array);
+    DisplayArray(result1);
+
+    Console.WriteLine("\nWithout LINQ (Using HashSet):");
+    int[] result2 = RemoveDuplicatesWithoutLinq(array);
+    DisplayArray(result2);
+}
+
+// Using LINQ
+public static int[] RemoveDuplicatesWithLinq(int[] array)
+{
+    return array.Distinct().ToArray();
+}
+
+// Without LINQ
+public static int[] RemoveDuplicatesWithoutLinq(int[] array)
+{
+    HashSet<int> set = new HashSet<int>();
+
+    foreach (int num in array)
+    {
+        set.Add(num);
+    }
+
+    return set.ToArray();
+}
+
+public static void DisplayArray(int[] array)
+{
+    foreach (int num in array)
+    {
+        Console.WriteLine(num);
     }
 }
 ```
