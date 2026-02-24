@@ -12,6 +12,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 5. [Remove duplicates from an integer array](#5-Remove-duplicates-from-an-integer-array)
 6. [Find Common Elements Between Two Arrays](#6-Find-Common-Elements-Between-Two-Arrays)
 7. [Find Second Largest Number in array](#7-Find-Second-Largest-Number-in-array)
+8. [8. Find Duplicate characters in string](#8-Find-Duplicate-characters-in-string)
 
 
 ---
@@ -301,5 +302,49 @@ public static int FindSecondLargestNumber(int[] array)
         }            
     }
     return secondLargest;
+}
+```
+
+### 8. Find Duplicate characters in string
+**Answer:**  
+```csharp
+public static class Program
+{
+    public static void Main()
+    {
+        string input = "Hellosrilanka";
+
+        FindDuplicates(input);
+
+
+    }
+
+    public static void FindDuplicates(string input)
+    {
+        {
+            Dictionary<char, int> map = new Dictionary<char, int>();
+
+            foreach(char c in input)
+            {
+                //Checks if the character c already exists in the dictionary
+                if (map.ContainsKey(c))
+                {
+                    map[c]++;
+                }
+                else
+                {
+                    map[c] = 1;
+                }
+            }
+
+            foreach (var item in map)
+            {
+                Console.WriteLine(item);
+                if (item.Value > 1)
+                    Console.WriteLine($"Duplicate character: {item.Key}");
+            }
+        }
+    }
+    
 }
 ```
