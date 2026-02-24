@@ -272,3 +272,33 @@ namespace InterviewPractice
     }
 }
 ```
+### 6. Find-Find Second Largest Number in array
+**Answer:**  
+```csharp
+public static void Main()
+{
+    int[] numbers = { 5, 10, 3, 8, 2 };
+    Console.WriteLine( FindSecondLargestNumber(numbers));
+
+}
+
+public static int FindSecondLargestNumber(int[] array)
+{
+    int largest = int.MinValue;
+    int secondLargest = int.MinValue;
+
+    foreach (int num in array)
+    {
+        if(num > largest)
+        {
+            secondLargest = largest;
+            largest = num;
+        }
+        else if (num > secondLargest && num != largest )
+        {
+           secondLargest= num;
+        }            
+    }
+    return secondLargest;
+}
+```
