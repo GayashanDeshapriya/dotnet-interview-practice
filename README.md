@@ -11,6 +11,7 @@ A curated list of **.NET and C# practical interview questions** to help you prep
 4. [Find first non-repeated character in a string](#4-Findfirst-non-repeated-character-in-a-string)
 5. [Remove duplicates from an integer array](#5-Remove-duplicates-from-an-integer-array)
 6. [Find Common Elements Between Two Arrays](#6-Find-Common-Elements-Between-Two-Arrays)
+7. [Find Second Largest Number in array](#7-Find-Second-Largest-Number-in-array)
 
 
 ---
@@ -272,7 +273,7 @@ namespace InterviewPractice
     }
 }
 ```
-### 7. Find-Find Second Largest Number in array
+### 7. Find Second Largest Number in array
 **Answer:**  
 ```csharp
 public static void Main()
